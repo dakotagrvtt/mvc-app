@@ -1,13 +1,20 @@
-# node-express-mvc
+# mvc-app
 
 > Node.js and the Express web framework make it easy to build well-designed web apps using MVC
 
 [![Build Status](https://travis-ci.org/denisecase/node-express-mvc.svg?branch=master)](https://travis-ci.org/denisecase/node-express-mvc)
 
+## Developers
+
+- [Logan Smith](https://github.com/Logan11999)
+- [Matthew Sheahan](https://github.com/s534141)
+- [Justin Folkerts](https://github.com/jfolkerts)
+- [Dakota Gravitt](https://github.com/dakotagrvtt/)
+
 ## Links
 
-- [Demo](https://denisecase.github.io/node-express-mvc/)
-- [Source](https://github.com/denisecase/node-express-mvc)
+- [Demo]() Coming soon!
+- [Source](https://github.com/dakotagrvtt/mvc-app)
 
 ## Dev Tools
 
