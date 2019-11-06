@@ -40,22 +40,15 @@ const CourseSchema = new mongoose.Schema({
         type: String,
         minlength: 4,
         maxlength: 150,
-        required: true,
+        required: false,
         default: 'Course description'
     },
-    max_students: {
+    credit_hours: {
         type: Number,
-        min: 0,
-        max: 55,
+        min: 1,
+        max: 6,
         required: true,
-        default: 10
-    },
-    allocated_students: {
-        type: Number,
-        min: 0,
-        max: 55,
-        required: true,
-        default: 0
+        default: 3
     }
 
 })

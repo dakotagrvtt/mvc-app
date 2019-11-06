@@ -1,0 +1,18 @@
+[
+  {
+    "_id": 101,
+    "course_num": 44563,
+    "sections": 4,
+    "title": "Developing Web Apps and Services",
+    "description": "Technologies and protocols supporting web applications and we services. Students gain experience in client-side and server-side programming.",
+    "credit_hours": 3
+  },
+  {
+    "_id": 102,
+    "course_num": 44101,
+    "sections": 2,
+    "title": "Foundations of Computing",
+    "description": "An intro to fundatmental concepts in computing. Emphasis will include the impact of computing in academic disciplines and all aspects of society.",
+    "credit_hours": 3
+  }
+]
