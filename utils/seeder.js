@@ -1,7 +1,7 @@
 const Datastore = require('nedb') // set up a temporary (in memory) database
 const developerData = require('../data/developers.json') // read in data file
 const courseData = require('../data/course.json') // read in data file
-const courseData = require('../data/course.json') // read in student
+const studentData = require('../data/student.json') // read in student
 // inject Express app to configure it - EVERYTHING in through argument list
 
 module.exports = (app) => {
