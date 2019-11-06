@@ -24,7 +24,7 @@ module.exports = (app) => {
 
   console.log(`${app.locals.developers.query.length} developers seeded`)
   console.log(`${app.locals.course.query.length} courses seeded`)
-  console.log(`${app.locals.student.query.length} courses seeded`)
+  console.log(`${app.locals.student.query.length} students seeded`)
 
   console.log('END Data Seeder. Sample data read and verified.')
 }
