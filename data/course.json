@@ -14,5 +14,37 @@
     "title": "Foundations of Computing",
     "description": "An intro to fundatmental concepts in computing. Emphasis will include the impact of computing in academic disciplines and all aspects of society.",
     "credit_hours": 3
+  },
+  {
+    "_id": 103,
+    "course_num": 44102,
+    "sections": 1,
+    "title": "Course01",
+    "description": "",
+    "credit_hours": 3
+  },
+  {
+    "_id": 104,
+    "course_num": 44103,
+    "sections": 3,
+    "title": "Web Mining",
+    "description": "...",
+    "credit_hours": 6
+  },
+  {
+    "_id": 105,
+    "course_num": 21104,
+    "sections": 50,
+    "title": "Literature",
+    "description": "Reading comprehension and analysis.",
+    "credit_hours": 3
+  },
+  {
+    "_id": 106,
+    "course_num": 26535,
+    "sections": 1,
+    "title": "Chemistry I",
+    "description": "Deadly chemicals and other fun things.",
+    "credit_hours": 4
   }
 ]
