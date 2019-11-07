@@ -19,6 +19,7 @@ module.exports = (app) => {
 
   // insert the sample data into our datastore
   db.developers.insert(developerData)
+  db.course.insert(courseData)
   db.student.insert(studentData)
   // initialize app.locals (these objects are available to the controllers)
   app.locals.developers = db.developers.find(developerData)
