@@ -1,12 +1,56 @@
 [
     {
-      "_id": "s524601",
+      "_id": "1111",
       "given": "Logan",
       "family": "Smith",
       "email": "s524601@nwmissouri.edu",
       "gpa": 3.2,
       "github": "https://github.com/Logan11999",
-      "URL": "https://www.nwmissouri.edu/csis/directory/case.htm",
       "section": 1
+    },
+    {
+      "_id": "1112",
+      "given": "Jack",
+      "family": "Sutton",
+      "email": "sutton@nwmissouri.edu",
+      "gpa": 3.5,
+      "github": "https://github.com/Sutton",
+      "section": 4
+    },
+    {
+      "_id": "1113",
+      "given": "Edward",
+      "family": "Kenway",
+      "email": "kenway@nwmissouri.edu",
+      "gpa": 4.0,
+      "github": "https://github.com/Kenway",
+      "section": 1
+    },
+    {
+      "_id": "1114",
+      "given": "Samantha",
+      "family": "Ford",
+      "email": "ford@nwmissouri.edu",
+      "gpa": 3.8,
+      "github": "https://github.com/Ford",
+      "section": 3
+    },
+    {
+      "_id": "1115",
+      "given": "Zack",
+      "family": "Jackson",
+      "email": "jackson@nwmissouri.edu",
+      "gpa": 2.8,
+      "github": "https://github.com/Jackson",
+      "section": 1
+    },
+    {
+      "_id": "1116",
+      "given": "Josh",
+      "family": "Simmons",
+      "email": "simmons@nwmissouri.edu",
+      "gpa": 3.6,
+      "github": "https://github.com/Simmons",
+      "section": 2
     }
   ]
