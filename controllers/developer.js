@@ -14,14 +14,14 @@ const notfoundstring = 'Could not find developer with id='
 // RESPOND WITH JSON DATA  --------------------------------------------
 
 // GET all JSON
-api.get('/findall', (req, res) => {
+api.get('dev/findall', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   const data = req.app.locals.developers.query
   res.send(JSON.stringify(data))
 })
 
 // GET one JSON by ID
-api.get('/findone/:id', (req, res) => {
+api.get('dev/findone/:id', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   const id = parseInt(req.params.id)
   const data = req.app.locals.developers.query
@@ -33,15 +33,15 @@ api.get('/findone/:id', (req, res) => {
 // RESPOND WITH VIEWS  --------------------------------------------
 
 // GET to this controller base URI (the default)
-api.get('/', (req, res) => {
-  res.render('developer/index.ejs', {
+api.get('/dev', (req, res) => {
+  res.render('dev/index.ejs', {
     developers: req.app.locals.developers.query
   })
 })
 
 // GET create
 api.get('/create', (req, res) => {
-  res.render('developer/create', {
+  res.render('dev/create', {
     developers: req.app.locals.developers.query,
     developer: new Model()
   })
@@ -53,7 +53,7 @@ api.get('/delete/:id', (req, res) => {
   const data = req.app.locals.developers.query
   const item = find(data, { _id: id })
   if (!item) { return res.end(notfoundstring + id) }
-  res.render('developer/delete', {
+  res.render('dev/delete', {
     developer: item
   })
 })
@@ -64,7 +64,7 @@ api.get('/details/:id', (req, res) => {
   const data = req.app.locals.developers.query
   const item = find(data, { _id: id })
   if (!item) { return res.end(notfoundstring + id) }
-  res.render('developer/details', {
+  res.render('dev/details', {
     developer: item
   })
 })
@@ -75,7 +75,7 @@ api.get('/edit/:id', (req, res) => {
   const data = req.app.locals.developers.query
   const item = find(data, { _id: id })
   if (!item) { return res.end(notfoundstring + id) }
-  res.render('developer/edit', {
+  res.render('dev/edit', {
     developer: item
   })
 })
