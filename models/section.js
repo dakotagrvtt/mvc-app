@@ -8,7 +8,7 @@
 */
 const mongoose = require('mongoose')
 
-const CourseSchema = new mongoose.Schema({
+const SectionSchema = new mongoose.Schema({
 
     _id: {
         type: Number,
