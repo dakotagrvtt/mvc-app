@@ -2,7 +2,7 @@
   {
     "_id": 101,
     "course_num": 44563,
-    "sections": 4,
+    "sections": 1,
     "title": "Developing Web Apps and Services",
     "description": "Technologies and protocols supporting web applications and we services. Students gain experience in client-side and server-side programming.",
     "credit_hours": 3
@@ -10,7 +10,7 @@
   {
     "_id": 102,
     "course_num": 44101,
-    "sections": 2,
+    "sections": 1,
     "title": "Foundations of Computing",
     "description": "An intro to fundatmental concepts in computing. Emphasis will include the impact of computing in academic disciplines and all aspects of society.",
     "credit_hours": 3
@@ -26,7 +26,7 @@
   {
     "_id": 104,
     "course_num": 44103,
-    "sections": 3,
+    "sections": 2,
     "title": "Web Mining",
     "description": "...",
     "credit_hours": 6
@@ -34,7 +34,7 @@
   {
     "_id": 105,
     "course_num": 21104,
-    "sections": 50,
+    "sections": 1,
     "title": "Literature",
     "description": "Reading comprehension and analysis.",
     "credit_hours": 3
