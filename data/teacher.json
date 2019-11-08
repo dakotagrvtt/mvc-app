@@ -1,0 +1,44 @@
+[
+    {
+      "_id": "11111",
+      "given": "Denise",
+      "family": "Case",
+      "email": "dcase@nwmissouri.edu",
+      "office": "CH2280"
+    },
+    {
+      "_id": "11112",
+      "given": "Michael",
+      "family": "Rogers",
+      "email": "michael@nwmissouri.edu",
+      "office": "CH2270"
+    },
+    {
+      "_id": "11113",
+      "given": "Aziz",
+      "family": "Fellah",
+      "email": "afellah@nwmissouri.edu",
+      "office": "CH2290"
+    },
+    {
+      "_id": "11114",
+      "given": "Phil",
+      "family": "McGraw",
+      "email": "DrPhil@fakeemail.net",
+      "office": "CH1337"
+    },
+    {
+      "_id": "11115",
+      "given": "Victor",
+      "family": "Doom",
+      "email": "vdoom@fantasticfour.gov",
+      "office": "Latveria1111"
+    },
+    {
+      "_id": "11116",
+      "given": "Otto",
+      "family": "Octavius",
+      "email": "doctoroctopus@spiderman.com",
+      "office": "Valk1234"
+    }
+  ]
