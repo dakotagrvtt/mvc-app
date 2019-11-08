@@ -1,22 +1,22 @@
 /**
 *  Student controller
-*  Handles requests related to developer resources.
+*  Handles requests related to student resources.
 *
 * @author Logan Smith <s524601@nwmissouri.edu>
 *
 */
 const express = require('express')
 const api = express.Router()
-// const Model = require('../models/student.js')
+const Model = require('../models/student.js')
 const find = require('lodash.find')
-const notfoundstring = 'Could not find developer with id='
+const notfoundstring = 'Could not find student with id='
 
 // RESPOND WITH JSON DATA  --------------------------------------------
 
 // GET all JSON
 api.get('/findall', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
-  const data = req.app.locals.student.query
+  const data = req.app.locals.students.query
   res.send(JSON.stringify(data))
 })
 
@@ -24,31 +24,31 @@ api.get('/findall', (req, res) => {
 api.get('/findone/:id', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   const id = parseInt(req.params.id)
-  const data = req.app.locals.student.query
+  const data = req.app.locals.students.query
   const item = find(data, { _id: id })
   if (!item) { return res.end(notfoundstring + id) }
   res.send(JSON.stringify(item))
 })
 
 // GET to this controller base URI (the default)
-api.get('student/', (req, res) => {
+api.get('/', (req, res) => {
   res.render('student/index.ejs', {
-    students: req.app.locals.student.query
+    students: req.app.locals.students.query
   })
 })
 
 // GET create
-api.get('student/create', (req, res) => {
-  res.render('student/create', {
-    students: req.app.locals.student.query,
-    stuent: new Model()
+api.get('/create', (req, res) => {
+  res.render('student/create.ejs', {
+    students: req.app.locals.students.query,
+    student: new Model()
   })
 })
 
 // GET /delete/:id
-api.get('student/delete/:id', (req, res) => {
+api.get('/delete/:id', (req, res) => {
   const id = parseInt(req.params.id)
-  const data = req.app.locals.student.query
+  const data = req.app.locals.students.query
   const item = find(data, { _id: id })
   if (!item) { return res.end(notfoundstring + id) }
   res.render('student/delete', {
@@ -57,9 +57,9 @@ api.get('student/delete/:id', (req, res) => {
 })
 
 // GET /details/:id
-api.get('student/details/:id', (req, res) => {
+api.get('/details/:id', (req, res) => {
   const id = parseInt(req.params.id)
-  const data = req.app.locals.student.query
+  const data = req.app.locals.students.query
   const item = find(data, { _id: id })
   if (!item) { return res.end(notfoundstring + id) }
   res.render('student/details', {
@@ -68,9 +68,9 @@ api.get('student/details/:id', (req, res) => {
 })
 
 // GET one
-api.get('student/edit/:id', (req, res) => {
+api.get('/edit/:id', (req, res) => {
   const id = parseInt(req.params.id)
-  const data = req.app.locals.student.query
+  const data = req.app.locals.students.query
   const item = find(data, { _id: id })
   if (!item) { return res.end(notfoundstring + id) }
   res.render('student/edit', {

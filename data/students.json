@@ -1,6 +1,6 @@
 [
     {
-      "_id": "1111",
+      "_id": 1111,
       "given": "Logan",
       "family": "Smith",
       "email": "s524601@nwmissouri.edu",
@@ -9,7 +9,7 @@
       "section": 1
     },
     {
-      "_id": "1112",
+      "_id": 1112,
       "given": "Jack",
       "family": "Sutton",
       "email": "sutton@nwmissouri.edu",
@@ -18,7 +18,7 @@
       "section": 4
     },
     {
-      "_id": "1113",
+      "_id": 1113,
       "given": "Edward",
       "family": "Kenway",
       "email": "kenway@nwmissouri.edu",
@@ -27,7 +27,7 @@
       "section": 1
     },
     {
-      "_id": "1114",
+      "_id": 1114,
       "given": "Samantha",
       "family": "Ford",
       "email": "ford@nwmissouri.edu",
@@ -36,7 +36,7 @@
       "section": 3
     },
     {
-      "_id": "1115",
+      "_id": 1115,
       "given": "Zack",
       "family": "Jackson",
       "email": "jackson@nwmissouri.edu",
@@ -45,7 +45,7 @@
       "section": 1
     },
     {
-      "_id": "1116",
+      "_id": 1116,
       "given": "Josh",
       "family": "Simmons",
       "email": "simmons@nwmissouri.edu",

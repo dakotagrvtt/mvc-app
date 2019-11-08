@@ -14,14 +14,14 @@ const notfoundstring = 'Could not find developer with id='
 // RESPOND WITH JSON DATA  --------------------------------------------
 
 // GET all JSON
-api.get('dev/findall', (req, res) => {
+api.get('/findall', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   const data = req.app.locals.developers.query
   res.send(JSON.stringify(data))
 })
 
 // GET one JSON by ID
-api.get('dev/findone/:id', (req, res) => {
+api.get('/findone/:id', (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   const id = parseInt(req.params.id)
   const data = req.app.locals.developers.query
