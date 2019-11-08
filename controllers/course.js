@@ -88,11 +88,15 @@ api.post('/save', (req, res) => {
   const item = new Model()
   console.info(`NEW ID ${req.body._id}`)
   item._id = parseInt(req.body._id)
-  item.course_num = req.body.course_num
-  item.sections = req.body.sections
-  item.title = req.body.title
+  item.school_num = parseInt(req.body.school_num)
+  item.course_num = parseInt(req.body.course_num)
+  item.name = req.body.name
   item.description = req.body.description
-  item.credit_hours = req.body.credit_hours
+  item.credit_hours = parseInt(req.body.credit_hours)
+  item.inSpring = req.body.inSpring
+  item.inSummer = req.body.inSummer
+  item.inFall = req.body.inFall
+  
   res.send(`THIS FUNCTION WILL SAVE A NEW course ${JSON.stringify(item)}`)
 })
 

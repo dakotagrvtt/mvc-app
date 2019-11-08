@@ -1,50 +1,68 @@
 [
   {
     "_id": 101,
-    "course_num": 44563,
-    "sections": 1,
-    "title": "Developing Web Apps and Services",
+    "school_num": 44,
+    "course_num": 563,
+    "name": "Developing Web Apps and Services",
     "description": "Technologies and protocols supporting web applications and we services. Students gain experience in client-side and server-side programming.",
-    "credit_hours": 3
+    "credit_hours": 3,
+    "inSpring": true,
+    "inSummer": false,
+    "inFall": true
   },
   {
     "_id": 102,
-    "course_num": 44101,
-    "sections": 1,
-    "title": "Foundations of Computing",
+    "school_num": 44,
+    "course_num": 101,
+    "name": "Foundations of Computing",
     "description": "An intro to fundatmental concepts in computing. Emphasis will include the impact of computing in academic disciplines and all aspects of society.",
-    "credit_hours": 3
+    "credit_hours": 3,
+    "inSpring": true,
+    "inSummer": false,
+    "inFall": true
   },
   {
     "_id": 103,
-    "course_num": 44102,
-    "sections": 1,
-    "title": "Course01",
+    "school_num": 44,
+    "course_num": 102,
+    "name": "Course01",
     "description": "",
-    "credit_hours": 3
+    "credit_hours": 3,
+    "inSpring": true,
+    "inSummer": false,
+    "inFall": true
   },
   {
     "_id": 104,
-    "course_num": 44103,
-    "sections": 2,
-    "title": "Web Mining",
+    "school_num": 44,
+    "course_num": 103,
+    "name": "Web Mining",
     "description": "...",
-    "credit_hours": 6
+    "credit_hours": 6,
+    "inSpring": true,
+    "inSummer": false,
+    "inFall": true
   },
   {
     "_id": 105,
-    "course_num": 21104,
-    "sections": 1,
-    "title": "Literature",
+    "school_num": 44,
+    "course_num": 104,
+    "name": "Literature",
     "description": "Reading comprehension and analysis.",
-    "credit_hours": 3
+    "credit_hours": 3,
+    "inSpring": true,
+    "inSummer": false,
+    "inFall": true
   },
   {
     "_id": 106,
-    "course_num": 26535,
-    "sections": 1,
-    "title": "Chemistry I",
+    "school_num": 26,
+    "course_num": 535,
+    "name": "Chemistry I",
     "description": "Deadly chemicals and other fun things.",
-    "credit_hours": 4
+    "credit_hours": 4,
+    "inSpring": true,
+    "inSummer": false,
+    "inFall": true
   }
 ]

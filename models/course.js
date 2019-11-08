@@ -12,24 +12,26 @@ const CourseSchema = new mongoose.Schema({
 
     _id: {
         type: Number,
-        required: true
+        required: true,
+        unique: true
     },
-    course_num: {
+    school_num: {
         type: String,
-        minlength: 5,
-        maxlength: 5,
+        minlength: 2,
+        maxlength: 2,
         required: true,
         unique: true,
         default: '00000'
     },
-    sections: {
-        type: Number,
-        min: 0,
-        max: 50,
+    course_num: {
+        type: String,
+        minlength: 3,
+        maxlength: 3,
         required: true,
-        default: 1
+        unique: true,
+        default: '00000'
     },
-    title: {
+    name: {
         type: String,
         minlength: 3,
         maxlength: 75,
@@ -49,6 +51,21 @@ const CourseSchema = new mongoose.Schema({
         max: 6,
         required: true,
         default: 3
+    },
+    inSpring: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
+    inSummer: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
+    inFall: {
+        type: Boolean,
+        required: true,
+        default: false
     }
 
 })
