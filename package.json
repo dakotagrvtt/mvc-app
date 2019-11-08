@@ -1,15 +1,24 @@
 {
-  "name": "node-express",
-  "description": "Express web app using MVC (no views yet)",
+  "name": "node-express-mvc-views",
+  "description": "Express web app using MVC (with views)",
   "version": "1.0.0",
   "author": "Denise Case",
   "dependencies": {
+    "body-parser": "latest",
+    "cookie-parser": "latest",
+    "debug": "latest",
+    "ejs": "latest",
     "config": "latest",
+    "consolidate": "latest",
     "express": "latest",
+    "express-ejs-layouts": "latest",
+    "helmet": "latest",
     "lodash": "latest",
     "lodash.find": "latest",
     "mongoose": "latest",
-    "nedb": "latest"
+    "nedb": "latest",
+    "morgan": "latest",
+    "serve-favicon": "latest"
   },
   "devDependencies": {
     "eslint": "latest",
