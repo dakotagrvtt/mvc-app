@@ -38,7 +38,7 @@ api.get('course/', (req, res) => {
   })
 })
 
-// GET create
+// GET /create
 api.get('course/create', (req, res) => {
   res.render('course/create', {
     courses: req.app.locals.course.query,
@@ -97,23 +97,53 @@ api.post('/save', (req, res) => {
   item.inSummer = req.body.inSummer
   item.inFall = req.body.inFall
   
-  res.send(`THIS FUNCTION WILL SAVE A NEW course ${JSON.stringify(item)}`)
+  //error checking
+  item.save((err) => {
+    if (err) { return res.end('ERROR: item could not be saved') }
+    LOG.info(`SAVING NEW item ${JSON.stringify(item)}`)
+    return res.redirect('/course')
+  })
 })
 
-// POST update with id
+// POST save with id
 api.post('/save/:id', (req, res) => {
-  console.info(`Handling SAVE request ${req}`)
+  LOG.info(`Handling SAVE request ${req}`)
   const id = parseInt(req.params.id)
-  console.info(`Handling SAVING ID=${id}`)
-  res.send(`THIS FUNCTION WILL SAVE CHANGES TO AN EXISTING course with id=${id}`)
+  LOG.info(`Handling SAVING ID=${id}`)
+  Model.updateOne({ _id: id },
+    { // use mongoose field update operator $set
+      $set: {
+    //COURSE DATA FIELDS
+        _id: req.body._id,
+        school_num: req.body.school_num,
+        course_num: req.body.course_num,
+        name: req.body.name,
+        description: req.body.description,
+        credit_hours: req.body.credit_hours,
+        inSpring: req.body.inSpring,
+        inSummer: req.body.inSummer,
+        inFall: req.body.inFall
+      }
+    },
+    (err, item) => {
+      if (err) { return res.end(notfoundstring) }
+      LOG.info(`ORIGINAL VALUES ${JSON.stringify(item)}`)
+      LOG.info(`UPDATED VALUES: ${JSON.stringify(req.body)}`)
+      LOG.info(`SAVING UPDATED item ${JSON.stringify(item)}`)
+      return res.redirect('/developer')
+    })
 })
 
 // DELETE id (uses HTML5 form method POST)
 api.post('/delete/:id', (req, res) => {
-  console.info(`Handling DELETE request ${req}`)
+  LOG.info(`Handling DELETE request ${req}`)
   const id = parseInt(req.params.id)
-  console.info(`Handling REMOVING ID=${id}`)
-  res.send(`THIS FUNCTION WILL DELETE FOREVER THE EXISTING course with id=${id}`)
+  LOG.info(`Handling REMOVING ID=${id}`)
+  Model.remove({ _id: id }).setOptions({ single: true }).exec((err, deleted) => {
+    if (err) { return res.end(notfoundstring) }
+    console.log(`Permanently deleted item ${JSON.stringify(deleted)}`)
+    return res.redirect('/course')
+  })
 })
 
 module.exports = api
