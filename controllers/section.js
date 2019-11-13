@@ -7,76 +7,84 @@
 */
 const express = require('express')
 const api = express.Router()
-// const Model = require('../models/developer.js')
-const find = require('lodash.find')
-const notfoundstring = 'Could not find developer with id='
+const LOG = require('../utils/logger.js')
+const Model = require('../models/section.js')
+const notfoundstring = 'section not found'
 
 // RESPOND WITH JSON DATA  --------------------------------------------
 
 // GET all JSON
 api.get('/findall', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
-  const data = req.app.locals.course.query
-  res.send(JSON.stringify(data))
+  LOG.info(`Handling /findall ${req}`)
+  Model.find({}, (err, data) => {
+    res.json(data)
+  })
 })
 
 // GET one JSON by ID
 api.get('/findone/:id', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
+  LOG.info(`Handling /findone ${req}`)
   const id = parseInt(req.params.id)
-  const data = req.app.locals.course.query
-  const item = find(data, { _id: id })
-  if (!item) { return res.end(notfoundstring + id) }
-  res.send(JSON.stringify(item))
+  Model.find({ _id: id }, (err, results) => {
+    if (err) { return res.end(notfoundstring) }
+    res.json(results[0])
+  })
 })
 
 // RESPOND WITH VIEWS  --------------------------------------------
 
 // GET to this controller base URI (the default)
-api.get('section/', (req, res) => {
-  res.render('section/index.ejs', {
-    sections: req.app.locals.section.query
+api.get('/', (req, res) => {
+  LOG.info(`Handling GET / ${req}`)
+  Model.find({}, (err, data) => {
+    res.locals.sections = data
+    res.render('section/index.ejs')
   })
 })
 
 // GET create
-api.get('section/create', (req, res) => {
-  res.render('section/create', {
-    sections: req.app.locals.section.query,
-    section: new Model()
+api.get('/create', (req, res) => {
+  LOG.info(`Handling GET /create ${req}`)
+  Model.find({}, (err, data) => {
+    res.locals.sections = data
+    res.locals.section = new Model()
+    res.render('section/create')
   })
 })
 
 // GET /delete/:id
-api.get('section/delete/:id', (req, res) => {
+api.get('/delete/:id', (req, res) => {
+  LOG.info(`Handling GET /delete/:id ${req}`)
   const id = parseInt(req.params.id)
-  const data = req.app.locals.section.query
-  const item = find(data, { _id: id })
-  if (!item) { return res.end(notfoundstring + id) }
-  res.render('section/delete', {
-    section: item
+  Model.find({ _id: id }, (err, results) => {
+    if (err) { return res.end(notfoundstring) }
+    LOG.info(`RETURNING VIEW FOR ${JSON.stringify(results)}`)
+    res.locals.section = results[0]
+    return res.render('section/delete.ejs')
   })
 })
 
 // GET /details/:id
-api.get('section/details/:id', (req, res) => {
+api.get('/details/:id', (req, res) => {
+  LOG.info(`Handling GET /details/:id ${req}`)
   const id = parseInt(req.params.id)
-  const data = req.app.locals.section.query
-  const item = find(data, { _id: id })
-  if (!item) { return res.end(notfoundstring + id) }
-  res.render('section/details', {
-    section: item
+  Model.find({ _id: id }, (err, results) => {
+    if (err) { return res.end(notfoundstring) }
+    LOG.info(`RETURNING VIEW FOR ${JSON.stringify(results)}`)
+    res.locals.section = results[0]
+    return res.render('section/details.ejs')
   })
 })
 
 // GET one
-api.get('section/edit/:id', (req, res) => {
+api.get('/edit/:id', (req, res) => {
+  LOG.info(`Handling GET /edit/:id ${req}`)
   const id = parseInt(req.params.id)
-  const data = req.app.locals.section.query
-  const item = find(data, { _id: id })
-  if (!item) { return res.end(notfoundstring + id) }
-  res.render('section/edit', {
-    section: item
+  Model.find({ _id: id }, (err, results) => {
+    if (err) { return res.end(notfoundstring) }
+    LOG.info(`RETURNING VIEW FOR${JSON.stringify(results)}`)
+    res.locals.section = results[0]
+    return res.render('section/edit.ejs')
   })
 })
 
