@@ -82,7 +82,7 @@ api.get('course/edit/:id', (req, res) => {
 // RESPOND WITH DATA MODIFICATIONS  -------------------------------
 
 // POST new
-api.post('/save', (req, res) => {
+api.post('course/save', (req, res) => {
   console.info(`Handling POST ${req}`)
   console.debug(JSON.stringify(req.body))
   const item = new Model()
@@ -106,7 +106,7 @@ api.post('/save', (req, res) => {
 })
 
 // POST save with id
-api.post('/save/:id', (req, res) => {
+api.post('course/save/:id', (req, res) => {
   LOG.info(`Handling SAVE request ${req}`)
   const id = parseInt(req.params.id)
   LOG.info(`Handling SAVING ID=${id}`)
@@ -130,12 +130,12 @@ api.post('/save/:id', (req, res) => {
       LOG.info(`ORIGINAL VALUES ${JSON.stringify(item)}`)
       LOG.info(`UPDATED VALUES: ${JSON.stringify(req.body)}`)
       LOG.info(`SAVING UPDATED item ${JSON.stringify(item)}`)
-      return res.redirect('/developer')
+      return res.redirect('/course')
     })
 })
 
 // DELETE id (uses HTML5 form method POST)
-api.post('/delete/:id', (req, res) => {
+api.post('course/delete/:id', (req, res) => {
   LOG.info(`Handling DELETE request ${req}`)
   const id = parseInt(req.params.id)
   LOG.info(`Handling REMOVING ID=${id}`)
