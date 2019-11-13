@@ -62,7 +62,7 @@
     "description": "Deadly chemicals and other fun things.",
     "credit_hours": 4,
     "inSpring": true,
-    "inSummer": false,
+    "inSummer": true,
     "inFall": true
   }
 ]
