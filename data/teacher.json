@@ -4,41 +4,41 @@
       "given": "Denise",
       "family": "Case",
       "email": "dcase@nwmissouri.edu",
-      "office": "CH2280"
+      "salary": 100000,
+      "github": "github.com/profcase"
     },
     {
       "_id": "11112",
       "given": "Michael",
       "family": "Rogers",
-      "email": "michael@nwmissouri.edu",
-      "office": "CH2270"
+      "salary": 1000000,
+      "github": "michael@nwmissouri.edu",
     },
     {
       "_id": "11113",
       "given": "Aziz",
       "family": "Fellah",
-      "email": "afellah@nwmissouri.edu",
-      "office": "CH2290"
+      "salary": 5000000,
+      "github": "afellah@nwmissouri.edu",
     },
     {
       "_id": "11114",
       "given": "Phil",
       "family": "McGraw",
-      "email": "DrPhil@fakeemail.net",
-      "office": "CH1337"
+      "github": "DrPhil@fakeemail.net",
     },
     {
       "_id": "11115",
       "given": "Victor",
       "family": "Doom",
-      "email": "vdoom@fantasticfour.gov",
-      "office": "Latveria1111"
+      "salary": 250000,
+      "github": "vdoom@fantasticfour.gov",
     },
     {
       "_id": "11116",
       "given": "Otto",
       "family": "Octavius",
-      "email": "doctoroctopus@spiderman.com",
-      "office": "Valk1234"
+      "salary": 50000,
+      "github": "doctoroctopus@spiderman.com"
     }
   ]

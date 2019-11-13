@@ -34,9 +34,15 @@ const TeacherSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
-  office: {
+  salary: {
+    type: Number,
+    minlength: 3,
+    maxlength: 50,
+    required: true
+  },
+  github: {
       type: String,
-      required: true
+      required: false
   }
 })
 module.exports = mongoose.model('Teacher', TeacherSchema)
