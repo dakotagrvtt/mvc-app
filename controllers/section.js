@@ -7,84 +7,77 @@
 */
 const express = require('express')
 const api = express.Router()
-const LOG = require('../utils/logger.js')
-const Model = require('../models/section.js')
-const notfoundstring = 'section not found'
+const Model = require('../models/sectiom.js')
+const find = require('lodash.find')
+const notfoundstring = 'Could not find section with id='
+
 
 // RESPOND WITH JSON DATA  --------------------------------------------
 
 // GET all JSON
 api.get('/findall', (req, res) => {
-  LOG.info(`Handling /findall ${req}`)
-  Model.find({}, (err, data) => {
-    res.json(data)
-  })
+  res.setHeader('Content-Type', 'application/json')
+  const data = req.app.locals.sections.query
+  res.send(JSON.stringify(data))
 })
 
 // GET one JSON by ID
 api.get('/findone/:id', (req, res) => {
-  LOG.info(`Handling /findone ${req}`)
+  res.setHeader('Content-Type', 'application/json')
   const id = parseInt(req.params.id)
-  Model.find({ _id: id }, (err, results) => {
-    if (err) { return res.end(notfoundstring) }
-    res.json(results[0])
-  })
+  const data = req.app.locals.sections.query
+  const item = find(data, { _id: id })
+  if (!item) { return res.end(notfoundstring + id) }
+  res.send(JSON.stringify(item))
 })
 
 // RESPOND WITH VIEWS  --------------------------------------------
 
 // GET to this controller base URI (the default)
 api.get('/', (req, res) => {
-  LOG.info(`Handling GET / ${req}`)
-  Model.find({}, (err, data) => {
-    res.locals.sections = data
-    res.render('section/index.ejs')
+  res.render('section/index.ejs', {
+    sections: req.app.locals.section.query
   })
 })
 
 // GET create
 api.get('/create', (req, res) => {
-  LOG.info(`Handling GET /create ${req}`)
-  Model.find({}, (err, data) => {
-    res.locals.sections = data
-    res.locals.section = new Model()
-    res.render('section/create')
+  res.render('section/create.ejs', {
+    section: req.app.locals.section.query,
+    section: new Model()
   })
 })
 
 // GET /delete/:id
 api.get('/delete/:id', (req, res) => {
-  LOG.info(`Handling GET /delete/:id ${req}`)
   const id = parseInt(req.params.id)
-  Model.find({ _id: id }, (err, results) => {
-    if (err) { return res.end(notfoundstring) }
-    LOG.info(`RETURNING VIEW FOR ${JSON.stringify(results)}`)
-    res.locals.section = results[0]
-    return res.render('section/delete.ejs')
+  const data = req.app.locals.section.query
+  const item = find(data, { _id: id })
+  if (!item) { return res.end(notfoundstring + id) }
+  res.render('section/delete', {
+    section: item
   })
 })
 
 // GET /details/:id
 api.get('/details/:id', (req, res) => {
-  LOG.info(`Handling GET /details/:id ${req}`)
   const id = parseInt(req.params.id)
-  Model.find({ _id: id }, (err, results) => {
-    if (err) { return res.end(notfoundstring) }
-    LOG.info(`RETURNING VIEW FOR ${JSON.stringify(results)}`)
-    res.locals.section = results[0]
-    return res.render('section/details.ejs')
+  const data = req.app.locals.section.query
+  const item = find(data, { _id: id })
+  if (!item) { return res.end(notfoundstring + id) }
+  res.render('section/details', {
+    section: item
   })
 })
 
 // GET one
 api.get('/edit/:id', (req, res) => {
-  LOG.info(`Handling GET /edit/:id ${req}`)
   const id = parseInt(req.params.id)
-  Model.find({ _id: id }, (err, results) => {
-    if (err) { return res.end(notfoundstring) }
-    LOG.info(`RETURNING VIEW FOR${JSON.stringify(results)}`)
-    res.locals.section = results[0]
-    return res.render('section/edit.ejs')
+  const data = req.app.locals.section.query
+  const item = find(data, { _id: id })
+  if (!item) { return res.end(notfoundstring + id) }
+  res.render('section/edit', {
+    section: item
   })
 })
 
@@ -92,10 +85,10 @@ api.get('/edit/:id', (req, res) => {
 
 // POST new
 api.post('/save', (req, res) => {
-  console.info(`Handling POST ${req}`)
-  console.debug(JSON.stringify(req.body))
+  LOG.info(`Handling POST ${req}`)
+  LOG.debug(JSON.stringify(req.body))
   const item = new Model()
-  console.info(`NEW ID ${req.body._id}`)
+  LOG.info(`NEW ID ${req.body._id}`)
   item._id = parseInt(req.body._id)
   item.SectionNumber = req.body.SectionNumber
   item.Days = req.body.Days
