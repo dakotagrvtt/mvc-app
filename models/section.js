@@ -12,7 +12,8 @@ const SectionSchema = new mongoose.Schema({
 
     _id: {
         type: Number,
-        required: true
+        required: true,
+        unique:true
     },
     SectionNumber: {
         type: String,
@@ -45,10 +46,14 @@ const SectionSchema = new mongoose.Schema({
         default: 'CH 1200'
     },
     InstructorID: {
-        
+        type: Number,
+        required: true,
+        unique:true
     },
     CourseID: {
-
+        type: Number,
+        required: true,
+        unique:true
     }
 
 })
