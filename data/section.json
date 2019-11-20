@@ -5,7 +5,7 @@
         "Days": "MWF",
         "StartTime": 1100,
         "RoomNumber": "CH 1200",
-        "InstructorID": 3,
+        "InstructorID": 11111,
         "CourseID": 101
     },
     {
@@ -14,7 +14,7 @@
         "Days": "MWF",
         "StartTime": 1200,
         "RoomNumber": "CH 1200",
-        "InstructorID": 3,
+        "InstructorID": 11111,
         "CourseID": 101
     },
     {
@@ -23,7 +23,7 @@
         "Days": "MWF",
         "StartTime": 1300,
         "RoomNumber": "CH 1200",
-        "InstructorID": 3,
+        "InstructorID": 11111,
         "CourseID": 101
     },
     {
@@ -32,7 +32,7 @@
         "Days": "MWF",
         "StartTime": 1400,
         "RoomNumber": "CH 1200",
-        "InstructorID": 3,
+        "InstructorID": 11111,
         "CourseID": 101
     },
     {
@@ -41,16 +41,52 @@
         "Days": "MWF",
         "StartTime": 1100,
         "RoomNumber": "CH 1300",
-        "InstructorID": 3,
+        "InstructorID": 11112,
         "CourseID": 102
     },
     {
         "_id": 1022,
+        "SectionNumber": "02",
+        "Days": "MWF",
+        "StartTime": 1200,
+        "RoomNumber": "CH 1300",
+        "InstructorID": 11112,
+        "CourseID": 102
+    },
+    {
+        "_id": 1031,
+        "SectionNumber": "01",
+        "Days": "MWF",
+        "StartTime": 1200,
+        "RoomNumber": "GS 1200",
+        "InstructorID": 11113,
+        "CourseID": 103
+    },
+    {
+        "_id": 1041,
         "SectionNumber": "01",
         "Days": "MWF",
         "StartTime": 1200,
         "RoomNumber": "CH 1300",
-        "InstructorID": 3,
-        "CourseID": 102
+        "InstructorID": 11114,
+        "CourseID": 104
+    },
+    {
+        "_id": 1051,
+        "SectionNumber": "01",
+        "Days": "MWF",
+        "StartTime": 800,
+        "RoomNumber": "CH 1300",
+        "InstructorID": 11115,
+        "CourseID": 105
+    },
+    {
+        "_id": 1061,
+        "SectionNumber": "01",
+        "Days": "TWF",
+        "StartTime": 1200,
+        "RoomNumber": "CH 3500",
+        "InstructorID": 11116,
+        "CourseID": 106
     }
 ]
