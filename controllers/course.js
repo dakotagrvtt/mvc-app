@@ -97,11 +97,13 @@ api.post('/save', (req, res) => {
   const item = new Model()
   LOG.info(`NEW ID ${req.body._id}`)
   item._id = parseInt(req.body._id)
-  item.email = req.body.email
-  item.datePlaced = req.body.datePlaced
-  item.dateShipped = req.body.dateShipped
-  item.paymentType = item.paymentType
-  item.paid = item.paid
+  item.school_num = req.body.school_num
+  item.course_num = req.body.course_num
+  item.name = req.body.name
+  item.description = item.body.description
+  item.inSpring = item.body.inSpring
+  item.inSummer = item.body.inSummer
+  item.inFall = item.body.inFall
   item.save((err) => {
     if (err) { return res.end('ERROR: course could not be saved') }
     LOG.info(`SAVING NEW course ${JSON.stringify(item)}`)
