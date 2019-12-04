@@ -2,7 +2,7 @@
 *  course controller
 *  Handles requests related to courses (see routes)
 *
-* @author Denise Case <dcase@nwmissouri.edu>
+* @author Dakota Gravitt <s523439@nwmissouri.edu>
 *
 */
 const express = require('express')
