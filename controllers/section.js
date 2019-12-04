@@ -7,7 +7,7 @@
 */
 const express = require('express')
 const api = express.Router()
-const Model = require('../models/sectiom.js')
+const Model = require('../models/section.js')
 const find = require('lodash.find')
 const notfoundstring = 'Could not find section with id='
 
