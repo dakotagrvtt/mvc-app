@@ -42,7 +42,7 @@ LOG.info(`Environment isProduction = ${isProduction}`)
 
 // choose the connection
 const dbURI = isProduction ? encodeURI(process.env.ATLAS_URI) : encodeURI(process.env.LOCAL_MONGODB_URI)
-LOG.info('MongoDB URL = mongodb+srv://admin:<password>@projectmvc-drwml.mongodb.net/test?retryWrites=true&w=majority' + dbURI)
+LOG.info('MongoDB URL = mongodb+srv://admin:321nimda@projectmvc-drwml.mongodb.net/test?retryWrites=true&w=majority' + dbURI)
 
 // get dbName
 const DB_NAME = process.env.DB_NAME
